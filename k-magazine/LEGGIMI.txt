@@ -1,0 +1,28 @@
+K-MAGAZINE · PAGINA DI DOWNLOAD CON REGISTRAZIONE
+==================================================
+
+Cosa fa
+- index.html  : modulo (nome, cognome, email, telefono, azienda, ruolo, consenso privacy)
+- grazie.html : pagina di conferma con il pulsante "Scarica K-Magazine (PDF)"
+- K-Magazine.pdf : la rivista (versione v3)
+- keytech-logo.png
+
+Come funziona l'invio dei dati
+- Il modulo usa FormSubmit (formsubmit.co): ad ogni invio arriva una mail a
+  luigi.marino@keytech.srl con tutti i campi in tabella. Nessun server da gestire.
+- Il visitatore riceve anche una mail automatica con il link al PDF.
+- PRIMO INVIO: FormSubmit manda a luigi.marino@keytech.srl una mail di
+  attivazione "Confirm your email". Cliccare "Activate" una sola volta;
+  da quel momento gli invii arrivano normalmente.
+
+Dove pubblicarla (NON sul sito keytech.srl)
+- Caricare la cartella k-magazine così com'è su un hosting statico qualsiasi:
+  GitHub Pages, Netlify Drop (app.netlify.com/drop), Cloudflare Pages, tiiny.host,
+  oppure uno spazio web qualsiasi.
+- I file calcolano da soli l'indirizzo della pagina "grazie" e del PDF:
+  non c'è nulla da modificare, a qualunque indirizzo venga pubblicata.
+- Una volta nota la URL definitiva, generare il QR verso
+  <URL>/?src=tirana2026   (il parametro src finisce nella mail come "Provenienza").
+
+Privacy
+- Il consenso rimanda a https://www.keytech.srl/privacy.html

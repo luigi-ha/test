@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-Magazine · Scarica la rivista</title>
+<meta name="description" content="Lascia i tuoi dati e scarica K-Magazine, la rivista Keytech sull'intelligenza artificiale nei processi aziendali.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* Layout: una colonna centrata, stile K-Magazine (crema, inchiostro, arancio Keytech) */
+  :root{--bg:#F5F1EA;--ink:#1B1918;--orange:#F4630D;--red:#B8400A;--tint:#F7DCC8;--muted:#4A4643;--white:#FFFFFF}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink)}
+  body{font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+  .wrap{max-width:720px;margin:0 auto}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:10px}
+  .top img{height:22px;width:auto}
+  h1{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:clamp(64px,16vw,120px);line-height:.85;text-transform:uppercase;margin:28px 0 0;letter-spacing:-.01em}
+  h1 span{color:var(--orange)}
+  .lead{font-size:19px;line-height:1.45;margin:16px 0 0;max-width:560px;text-wrap:pretty}
+  .en{color:var(--muted);font-style:italic}
+  .card{background:var(--white);border:2px solid var(--ink);padding:24px 20px;margin-top:28px}
+  .card h2{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:.95;text-transform:uppercase;margin:0 0 6px}
+  .card p.small{margin:0 0 18px;font-size:15px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid .full{grid-column:1 / -1}
+  @media (max-width:480px){.grid{grid-template-columns:1fr}}
+  label{display:flex;flex-direction:column;gap:6px;min-width:0}
+  label .l{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  label .l small{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+  input[type=text],input[type=email],input[type=tel]{width:100%;font:inherit;font-size:17px;padding:12px 12px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);border-radius:0}
+  input:focus{outline:3px solid var(--orange);outline-offset:1px}
+  .consent{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin-top:18px;font-size:14px;line-height:1.45}
+  .consent input{width:22px;height:22px;margin:0;accent-color:var(--orange)}
+  .consent a{color:var(--red)}
+  button{margin-top:20px;width:100%;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;letter-spacing:.02em;background:var(--orange);color:var(--ink);border:2px solid var(--ink);padding:14px 20px;cursor:pointer}
+  button:hover{background:#FF7A2E}
+  button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .strip{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:2px solid var(--ink);padding-top:14px}
+  .strip b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;line-height:.9}
+  .strip span{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  footer{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  footer a{color:var(--ink)}
+  @media (prefers-reduced-motion:no-preference){button{transition:background .15s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img src="keytech-logo.png" alt="Keytech">
+    <span class="mono">K-Magazine · N° 01</span>
+  </div>
+
+  <h1><span>K-</span>Magazine</h1>
+  <p class="lead">L’intelligenza artificiale nei processi aziendali, raccontata come un giornale: dal campo allo scaffale, l’ordinario all’AI e lo straordinario alle persone.<br><span class="en">The Keytech magazine on AI in business processes. Leave your details to download the PDF.</span></p>
+
+  <div class="card">
+    <h2>Scarica la rivista</h2>
+    <p class="small">Lascia i tuoi dati e ricevi subito il PDF. <span class="en">Fill in the form and download the PDF right away.</span></p>
+
+    <form id="lead" action="https://formsubmit.co/luigi.marino@keytech.srl" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nuovo contatto K-Magazine">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="next" value="grazie.html">
+      <input type="hidden" name="_autoresponse" id="auto" value="Grazie per aver richiesto K-Magazine. Il PDF è disponibile al link indicato nella pagina di conferma. Keytech S.r.l. · www.keytech.srl">
+      <input type="hidden" name="Provenienza" id="src" value="K-Magazine">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="grid">
+        <label><span class="l">Nome <small>/ First name</small></span><input type="text" name="Nome" id="nome" required autocomplete="given-name"></label>
+        <label><span class="l">Cognome <small>/ Last name</small></span><input type="text" name="Cognome" id="cognome" required autocomplete="family-name"></label>
+        <label class="full"><span class="l">Email <small>/ E-mail</small></span><input type="email" name="Email" id="email" required autocomplete="email" inputmode="email"></label>
+        <label><span class="l">Telefono <small>/ Phone</small></span><input type="tel" name="Telefono" id="tel" required autocomplete="tel" inputmode="tel"></label>
+        <label><span class="l">Azienda <small>/ Company</small></span><input type="text" name="Azienda" id="azienda" required autocomplete="organization"></label>
+        <label class="full"><span class="l">Ruolo <small>/ Role (optional)</small></span><input type="text" name="Ruolo" id="ruolo" autocomplete="organization-title"></label>
+      </div>
+
+      <label class="consent"><input type="checkbox" id="privacy" name="Consenso privacy" value="Sì" required><span>Ho letto l’<a href="https://www.keytech.srl/privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la rivista ed essere ricontattato da Keytech. <span class="en">I have read the privacy notice and agree to be contacted by Keytech.</span></span></label>
+
+      <button type="submit" id="btn">Invia e scarica · Send &amp; download</button>
+      <p class="small" id="err" hidden style="color:var(--red);margin-top:10px"></p>
+    </form>
+  </div>
+
+  <div class="strip">
+    <div><b>12</b><span>pagine</span></div>
+    <div><b>5</b><span>agenti AI</span></div>
+    <div><b>1</b><span>regia: K-ORCHESTRA</span></div>
+  </div>
+
+  <footer>
+    <span>Keytech S.r.l. · <a href="https://www.keytech.srl">www.keytech.srl</a></span>
+    <span>commerciale@keytech.srl · +39 06 87082637</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Provenienza dal QR: ?src=tirana2026 oppure ?src=rivista
+  try{
+    var p=new URLSearchParams(location.search), src=p.get('src');
+    if(src) document.getElementById('src').value='K-Magazine · '+src;
+    // _next e link PDF calcolati dall'URL reale della pagina: i file funzionano su qualsiasi host
+    var base=location.href.split('?')[0].split('#')[0].replace(/[^\/]*$/,'');
+    document.getElementById('next').value=base+'grazie.html';
+    document.getElementById('auto').value='Grazie per aver richiesto K-Magazine. Scarica il PDF qui: '+base+'K-Magazine.pdf — Thank you for requesting K-Magazine, download the PDF at the link above. Keytech S.r.l. · www.keytech.srl';
+  }catch(e){}
+  var f=document.getElementById('lead'), err=document.getElementById('err');
+  f.addEventListener('submit',function(ev){
+    var missing=[];
+    ['nome','cognome','email','tel','azienda'].forEach(function(id){var el=document.getElementById(id); if(!el.value.trim()) missing.push(el);});
+    var em=document.getElementById('email');
+    if(em.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)) missing.push(em);
+    if(!document.getElementById('privacy').checked) missing.push(document.getElementById('privacy'));
+    if(missing.length){
+      ev.preventDefault();
+      err.hidden=false; err.textContent='Compila tutti i campi obbligatori e accetta l’informativa. / Please fill in all required fields and accept the privacy notice.';
+      missing[0].focus();
+      return;
+    }
+    err.hidden=true;
+    document.getElementById('btn').disabled=true;
+    document.getElementById('btn').textContent='Invio in corso…';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-Magazine · Grazie</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#F5F1EA;--ink:#1B1918;--orange:#F4630D;--red:#B8400A;--muted:#4A4643;--white:#FFFFFF}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--orange);color:var(--ink)}
+  body{font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px;min-height:100vh}
+  .wrap{max-width:720px;margin:0 auto}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  h1{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:clamp(72px,20vw,150px);line-height:.82;text-transform:uppercase;margin:36px 0 0}
+  p.lead{font-size:20px;line-height:1.45;margin:18px 0 0;max-width:560px}
+  .en{font-style:italic}
+  .dl{display:block;margin-top:28px;background:var(--white);border:3px solid var(--ink);padding:22px 20px;text-decoration:none;color:var(--ink)}
+  .dl b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:.95;text-transform:uppercase}
+  .dl span{display:block;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+  .dl:hover{background:var(--bg)}
+  .links{margin-top:28px;display:flex;flex-direction:column;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}
+  .links a{color:var(--ink)}
+  footer{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span class="mono">K-Magazine · N° 01</span><span class="mono">Keytech</span></div>
+  <h1>Grazie.</h1>
+  <p class="lead">I tuoi dati sono arrivati. Ecco la rivista: buona lettura, e a presto.<br><span class="en">Thank you. Your details were received: here is the magazine.</span></p>
+  <a class="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica K-Magazine (PDF)</b><span>Download the magazine · PDF</span></a>
+  <div class="links">
+    <a href="https://www.keytech.srl">www.keytech.srl</a>
+    <a href="mailto:commerciale@keytech.srl">commerciale@keytech.srl</a>
+    <a href="tel:+390687082637">+39 06 87082637</a>
+  </div>
+  <footer>Keytech S.r.l. · Key skills in a Tech World</footer>
+</div>
+</body>
+</html>
