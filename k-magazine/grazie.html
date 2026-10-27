@@ -17,6 +17,8 @@
   .top img{height:22px;width:auto}
   h1{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:clamp(72px,20vw,150px);line-height:.82;text-transform:uppercase;margin:36px 0 0}
   h1 span{color:var(--orange)}
+  .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+  .kiro{height:clamp(120px,34vw,200px);width:auto;flex:none;margin-bottom:-8px}
   p.lead{font-size:20px;line-height:1.45;margin:18px 0 0;max-width:560px}
   .en{font-style:italic;color:var(--muted)}
   .dl{display:block;margin-top:28px;background:var(--orange);border:3px solid var(--ink);padding:22px 20px;text-decoration:none;color:#FFFFFF}
@@ -38,7 +40,7 @@
 <body>
 <div class="wrap">
   <div class="top"><img src="keytech-logo.png" alt="Keytech"><span class="mono">K-Magazine · N° 01</span></div>
-  <h1>Grazie<span>.</span></h1>
+  <div class="hero"><h1>Grazie<span>.</span></h1><img class="kiro" src="kiro.png" alt="Kiro, il robot Keytech"></div>
   <p class="lead">I tuoi dati sono arrivati. Ecco la rivista: buona lettura, e a presto.<br><span class="en">Thank you. Your details were received: here is the magazine.</span></p>
   <a class="dl" id="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica la rivista</b><span>K-Magazine · Download the PDF</span></a>
 
