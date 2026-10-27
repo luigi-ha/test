@@ -106,8 +106,10 @@
     if(src) document.getElementById('src').value='K-Magazine · '+src;
     // _next e link PDF calcolati dall'URL reale della pagina: i file funzionano su qualsiasi host
     var base=location.href.split('?')[0].split('#')[0].replace(/[^\/]*$/,'');
-    document.getElementById('next').value=base+'grazie.html';
-    document.getElementById('auto').value='Grazie per aver richiesto K-Magazine. Scarica il PDF qui: '+base+'K-Magazine.pdf — Thank you for requesting K-Magazine, download the PDF at the link above. Keytech S.r.l. · www.keytech.srl';
+    var agro=/^(bari|agro|confindustria)/i.test(src||'');
+    var pdf=agro?'K-Magazine-Agroalimentare.pdf':'K-Magazine.pdf';
+    document.getElementById('next').value=base+'grazie.html'+(src?('?src='+encodeURIComponent(src)):'');
+    document.getElementById('auto').value='Grazie per aver richiesto K-Magazine. Scarica il PDF qui: '+base+pdf+' — Thank you for requesting K-Magazine, download the PDF at the link above. Keytech S.r.l. · www.keytech.srl';
   }catch(e){}
   var f=document.getElementById('lead'), err=document.getElementById('err');
   f.addEventListener('submit',function(ev){

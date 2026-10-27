@@ -31,7 +31,7 @@
   <div class="top"><span class="mono">K-Magazine · N° 01</span><span class="mono">Keytech</span></div>
   <h1>Grazie.</h1>
   <p class="lead">I tuoi dati sono arrivati. Ecco la rivista: buona lettura, e a presto.<br><span class="en">Thank you. Your details were received: here is the magazine.</span></p>
-  <a class="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica K-Magazine (PDF)</b><span>Download the magazine · PDF</span></a>
+  <a class="dl" id="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica K-Magazine (PDF)</b><span>Download the magazine · PDF</span></a>
   <div class="links">
     <a href="https://www.keytech.srl">www.keytech.srl</a>
     <a href="mailto:commerciale@keytech.srl">commerciale@keytech.srl</a>
@@ -39,5 +39,9 @@
   </div>
   <footer>Keytech S.r.l. · Key skills in a Tech World</footer>
 </div>
+<script>
+try{var s=new URLSearchParams(location.search).get('src')||'';
+if(/^(bari|agro|confindustria)/i.test(s)){var a=document.getElementById('dl');a.href='K-Magazine-Agroalimentare.pdf';a.download='K-Magazine-Agroalimentare.pdf';a.querySelector('b').textContent='Scarica K-Magazine Agroalimentare (PDF)';}}catch(e){}
+</script>
 </body>
 </html>
