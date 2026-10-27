@@ -20,7 +20,7 @@
   p.lead{font-size:20px;line-height:1.45;margin:18px 0 0;max-width:560px}
   .en{font-style:italic;color:var(--muted)}
   .dl{display:block;margin-top:28px;background:var(--orange);border:3px solid var(--ink);padding:22px 20px;text-decoration:none;color:#FFFFFF}
-  .dl b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:.95;text-transform:uppercase}
+  .dl b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:.95;text-transform:uppercase}
   .dl span{display:block;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#FFFFFF;opacity:.9}
   .dl:hover{background:#FF7A2E}
   .dl:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
@@ -40,14 +40,14 @@
   <div class="top"><img src="keytech-logo.png" alt="Keytech"><span class="mono">K-Magazine · N° 01</span></div>
   <h1>Grazie<span>.</span></h1>
   <p class="lead">I tuoi dati sono arrivati. Ecco la rivista: buona lettura, e a presto.<br><span class="en">Thank you. Your details were received: here is the magazine.</span></p>
-  <a class="dl" id="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica K-Magazine (PDF)</b><span>Download the magazine · PDF</span></a>
+  <a class="dl" id="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica la rivista</b><span>K-Magazine · Download the PDF</span></a>
 
   <div class="follow">
     <span class="mono">Seguici · Follow us</span>
     <div class="social">
-      <a href="https://www.linkedin.com/company/keytech-srl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/linkedin/1B1918" alt="">LinkedIn</a>
-      <a href="https://www.instagram.com/keytech_srl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/instagram/1B1918" alt="">Instagram</a>
-      <a href="https://www.facebook.com/Keytechsrl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/facebook/1B1918" alt="">Facebook</a>
+      <a href="https://www.linkedin.com/company/keytech-srl/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.instagram.com/keytech_srl/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://www.facebook.com/Keytechsrl/" target="_blank" rel="noopener">Facebook ↗</a>
     </div>
   </div>
 
@@ -60,7 +60,7 @@
 </div>
 <script>
 try{var s=new URLSearchParams(location.search).get('src')||'';
-if(/^(bari|agro|confindustria)/i.test(s)){var a=document.getElementById('dl');a.href='K-Magazine-Agroalimentare.pdf';a.download='K-Magazine-Agroalimentare.pdf';a.querySelector('b').textContent='Scarica K-Magazine Agroalimentare (PDF)';}}catch(e){}
+if(/^(bari|agro|confindustria)/i.test(s)){var a=document.getElementById('dl');a.href='K-Magazine-Agroalimentare.pdf';a.download='K-Magazine-Agroalimentare.pdf';a.querySelector('b').textContent='Scarica l’edizione Agroalimentare'; a.querySelector('span').textContent='K-Magazine · Download the PDF';}}catch(e){}
 </script>
 </body>
 </html>
