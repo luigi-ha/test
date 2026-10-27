@@ -31,7 +31,7 @@
   label .l small{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
   input[type=text],input[type=email],input[type=tel]{width:100%;font:inherit;font-size:17px;padding:12px 12px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);border-radius:0}
   input:focus{outline:3px solid var(--orange);outline-offset:1px}
-  .consent{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin-top:18px;font-size:14px;line-height:1.45}
+  .consent{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin-top:14px;font-size:14px;line-height:1.45}
   .consent input{width:22px;height:22px;margin:0;accent-color:var(--orange)}
   .consent a{color:var(--red)}
   button{margin-top:20px;width:100%;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;letter-spacing:.02em;background:var(--orange);color:var(--ink);border:2px solid var(--ink);padding:14px 20px;cursor:pointer}
@@ -73,12 +73,13 @@
         <label><span class="l">Nome <small>/ First name</small></span><input type="text" name="Nome" id="nome" required autocomplete="given-name"></label>
         <label><span class="l">Cognome <small>/ Last name</small></span><input type="text" name="Cognome" id="cognome" required autocomplete="family-name"></label>
         <label class="full"><span class="l">Email <small>/ E-mail</small></span><input type="email" name="Email" id="email" required autocomplete="email" inputmode="email"></label>
-        <label><span class="l">Telefono <small>/ Phone</small></span><input type="tel" name="Telefono" id="tel" required autocomplete="tel" inputmode="tel"></label>
         <label><span class="l">Azienda <small>/ Company</small></span><input type="text" name="Azienda" id="azienda" required autocomplete="organization"></label>
-        <label class="full"><span class="l">Ruolo <small>/ Role (optional)</small></span><input type="text" name="Ruolo" id="ruolo" autocomplete="organization-title"></label>
+        <label><span class="l">Telefono <small>/ Phone (facoltativo · optional)</small></span><input type="tel" name="Telefono" id="tel" autocomplete="tel" inputmode="tel"></label>
       </div>
 
-      <label class="consent"><input type="checkbox" id="privacy" name="Consenso privacy" value="Sì" required><span>Ho letto l’<a href="https://www.keytech.srl/privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la rivista ed essere ricontattato da Keytech. <span class="en">I have read the privacy notice and agree to be contacted by Keytech.</span></span></label>
+      <input type="hidden" name="Ricontatto" id="ricontatto" value="No">
+      <label class="consent"><input type="checkbox" id="privacy" name="Consenso privacy" value="Sì" required><span>Ho letto l’<a href="https://www.keytech.srl/privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la rivista. <span class="en">I have read the privacy notice and agree to receive the magazine.</span> <b>(obbligatorio / required)</b></span></label>
+      <label class="consent"><input type="checkbox" id="ricontatto_cb"><span>Acconsento a essere ricontattato da Keytech per informazioni sui suoi servizi. <span class="en">I agree to be contacted by Keytech about its services.</span> (facoltativo / optional)</span></label>
 
       <button type="submit" id="btn">Invia e scarica · Send &amp; download</button>
       <p class="small" id="err" hidden style="color:var(--red);margin-top:10px"></p>
@@ -111,7 +112,7 @@
   var f=document.getElementById('lead'), err=document.getElementById('err');
   f.addEventListener('submit',function(ev){
     var missing=[];
-    ['nome','cognome','email','tel','azienda'].forEach(function(id){var el=document.getElementById(id); if(!el.value.trim()) missing.push(el);});
+    ['nome','cognome','email','azienda'].forEach(function(id){var el=document.getElementById(id); if(!el.value.trim()) missing.push(el);});
     var em=document.getElementById('email');
     if(em.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)) missing.push(em);
     if(!document.getElementById('privacy').checked) missing.push(document.getElementById('privacy'));
@@ -122,6 +123,7 @@
       return;
     }
     err.hidden=true;
+    document.getElementById('ricontatto').value=document.getElementById('ricontatto_cb').checked?'Sì':'No';
     document.getElementById('btn').disabled=true;
     document.getElementById('btn').textContent='Invio in corso…';
   });
