@@ -61,7 +61,8 @@
   <footer>Keytech S.r.l. · Key skills in a Tech World</footer>
 </div>
 <script>
-try{var s=new URLSearchParams(location.search).get('src')||'';
+try{var q=new URLSearchParams(location.search); var s=q.get('src')||'';
+if(q.get('err')){var pl=document.querySelector('p.lead'); if(pl) pl.innerHTML='Ecco la rivista. In questo momento non siamo riusciti a registrare i tuoi dati: scrivici a <a href="mailto:commerciale@keytech.srl">commerciale@keytech.srl</a> e ti ricontattiamo noi.<br><span class="en">Here is the magazine. We could not record your details right now: please email us at commerciale@keytech.srl.</span>';}
 if(/^(bari|agro|confindustria)/i.test(s)){var a=document.getElementById('dl');a.href='K-Magazine-Agroalimentare.pdf';a.download='K-Magazine-Agroalimentare.pdf';a.querySelector('b').textContent='Scarica l’edizione Agroalimentare'; a.querySelector('span').textContent='K-Magazine · Download the PDF';}}catch(e){}
 </script>
 </body>

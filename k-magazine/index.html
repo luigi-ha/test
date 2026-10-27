@@ -127,9 +127,32 @@
       return;
     }
     err.hidden=true;
-    document.getElementById('ricontatto').value=document.getElementById('ricontatto_cb').checked?'Sì':'No';
-    document.getElementById('btn').disabled=true;
-    document.getElementById('btn').textContent='Invio in corso…';
+    ev.preventDefault();
+    var ric=document.getElementById('ricontatto_cb').checked?'Sì':'No';
+    document.getElementById('ricontatto').value=ric;
+    var btn=document.getElementById('btn'); btn.disabled=true; btn.textContent='Invio in corso…';
+    var v=function(id){return document.getElementById(id).value.trim();};
+    var next=document.getElementById('next').value;
+    var data={'Nome':v('nome'),'Cognome':v('cognome'),'Email':v('email'),'Azienda':v('azienda'),'Telefono':v('tel'),
+              'Consenso privacy':'Sì','Ricontatto':ric,'Provenienza':document.getElementById('src').value,
+              'Data':new Date().toLocaleString('it-IT')};
+    function post(url,body,ms){
+      var ctl=('AbortController' in window)?new AbortController():null; var t=ctl&&setTimeout(function(){ctl.abort();},ms);
+      return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl&&ctl.signal})
+        .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});})
+        .finally(function(){if(t)clearTimeout(t);});
+    }
+    // 1) Web3Forms (canale principale)
+    var w3=Object.assign({access_key:'d16613d2-e7c2-4432-bb31-74cd359a7a06',subject:'Nuovo contatto K-Magazine',from_name:'K-Magazine',replyto:data.Email,botcheck:''},data);
+    // 2) FormSubmit (riserva)
+    var fs=Object.assign({_subject:'Nuovo contatto K-Magazine',_template:'table',_captcha:'false',_autoresponse:document.getElementById('auto').value},data);
+    post('https://api.web3forms.com/submit',w3,9000)
+      .then(function(r){ if(r.ok && r.j && r.j.success) return true; throw new Error('w3'); })
+      .catch(function(){ return post('https://formsubmit.co/ajax/3789f3d2317b13d47a055ed24da856bc',fs,9000).then(function(r){ return !!(r.ok); }).catch(function(){ return false; }); })
+      .then(function(sent){
+        // in ogni caso il visitatore arriva alla rivista; se nessun canale ha risposto lo segnaliamo nella pagina grazie
+        location.href=next+(sent?'':(next.indexOf('?')>-1?'&':'?')+'err=1');
+      });
   });
 })();
 </script>
