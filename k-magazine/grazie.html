@@ -7,31 +7,50 @@
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-  :root{--bg:#F5F1EA;--ink:#1B1918;--orange:#F4630D;--red:#B8400A;--muted:#4A4643;--white:#FFFFFF}
+  :root{--bg:#FFFFFF;--ink:#1B1918;--orange:#F4630D;--red:#B8400A;--muted:#4A4643;--cream:#F5F1EA}
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--orange);color:var(--ink)}
+  html,body{margin:0;background:var(--bg);color:var(--ink)}
   body{font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px;min-height:100vh}
   .wrap{max-width:720px;margin:0 auto}
   .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
   .top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  .top img{height:22px;width:auto}
   h1{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:clamp(72px,20vw,150px);line-height:.82;text-transform:uppercase;margin:36px 0 0}
+  h1 span{color:var(--orange)}
   p.lead{font-size:20px;line-height:1.45;margin:18px 0 0;max-width:560px}
-  .en{font-style:italic}
-  .dl{display:block;margin-top:28px;background:var(--white);border:3px solid var(--ink);padding:22px 20px;text-decoration:none;color:var(--ink)}
+  .en{font-style:italic;color:var(--muted)}
+  .dl{display:block;margin-top:28px;background:var(--orange);border:3px solid var(--ink);padding:22px 20px;text-decoration:none;color:#FFFFFF}
   .dl b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:.95;text-transform:uppercase}
-  .dl span{display:block;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
-  .dl:hover{background:var(--bg)}
+  .dl span{display:block;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#FFFFFF;opacity:.9}
+  .dl:hover{background:#FF7A2E}
+  .dl:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .follow{margin-top:36px;border-top:2px solid var(--ink);padding-top:18px}
+  .follow .mono{display:block;margin-bottom:12px}
+  .social{display:flex;flex-wrap:wrap;gap:10px}
+  .social a{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--ink);padding:10px 14px;text-decoration:none;color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;background:var(--cream)}
+  .social a img{width:20px;height:20px;display:block}
+  .social a:hover{background:var(--orange);color:#fff}
   .links{margin-top:28px;display:flex;flex-direction:column;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600}
   .links a{color:var(--ink)}
-  footer{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  footer{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><span class="mono">K-Magazine · N° 01</span><span class="mono">Keytech</span></div>
-  <h1>Grazie.</h1>
+  <div class="top"><img src="keytech-logo.png" alt="Keytech"><span class="mono">K-Magazine · N° 01</span></div>
+  <h1>Grazie<span>.</span></h1>
   <p class="lead">I tuoi dati sono arrivati. Ecco la rivista: buona lettura, e a presto.<br><span class="en">Thank you. Your details were received: here is the magazine.</span></p>
   <a class="dl" id="dl" href="K-Magazine.pdf" download="K-Magazine.pdf"><b>Scarica K-Magazine (PDF)</b><span>Download the magazine · PDF</span></a>
+
+  <div class="follow">
+    <span class="mono">Seguici · Follow us</span>
+    <div class="social">
+      <a href="https://www.linkedin.com/company/keytech-srl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/linkedin/1B1918" alt="">LinkedIn</a>
+      <a href="https://www.instagram.com/keytech_srl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/instagram/1B1918" alt="">Instagram</a>
+      <a href="https://www.facebook.com/Keytechsrl/" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/facebook/1B1918" alt="">Facebook</a>
+    </div>
+  </div>
+
   <div class="links">
     <a href="https://www.keytech.srl">www.keytech.srl</a>
     <a href="mailto:commerciale@keytech.srl">commerciale@keytech.srl</a>
